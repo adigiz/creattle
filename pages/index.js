@@ -4,50 +4,21 @@ import Head from 'next/head'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import FeatureSection from "../components/feature-section";
-import Image from "next/image";
 import creattleLogo from "../public/creattle-logo.png"
 import profilTyo from "../public/profil-tyo.jpeg"
 import profilAnggi from '../public/profil-anggi.jpeg'
-import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
-
-const features = [
-  {
-    name: 'Competitive exchange rates',
-    description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: GlobeAltIcon,
-  },
-  {
-    name: 'No hidden fees',
-    description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: ScaleIcon,
-  },
-  {
-    name: 'Transfers are instant',
-    description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: LightningBoltIcon,
-  },
-  {
-    name: 'Mobile notifications',
-    description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: AnnotationIcon,
-  },
-]
+import Link from "next/link";
 
 const navigation = [
   { name: 'Home', href: '#' },
-  { name: 'Our Values', href: '#' },
-  { name: 'Speciality', href: '#' },
-  { name: 'Use Cases', href: '#' },
+  { name: 'About Us', href: '#about-us' },
+  { name: 'Our Values', href: '#our-values' },
+  { name: 'Use Cases', href: '#use-cases' },
 ]
 
 export default function Example() {
   return (
-      <div>
+      <html className="scroll-smooth">
         <div className="relative bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 ">
@@ -75,9 +46,10 @@ export default function Example() {
                     </div>
                     <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                       {navigation.map((item) => (
-                          <a key={item.name} href={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+                         <Link href={item.href}><a className="font-medium text-gray-500 hover:text-gray-900">
                             {item.name}
                           </a>
+                         </Link>
                       ))}
                       <a href="#" className="font-medium text-blue-500 hover:text-blue-500">
                         Work with Us
@@ -128,9 +100,9 @@ export default function Example() {
                       </div>
                       <a
                           href="#"
-                          className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-gray-50 hover:bg-gray-100"
+                          className="block w-full px-5 py-3 text-center font-medium text-blue-600 bg-blue-50 hover:bg-gray-100"
                       >
-                        Log in
+                        Work With Us
                       </a>
                     </div>
                   </Popover.Panel>
@@ -148,12 +120,13 @@ export default function Example() {
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
+                      <Link href="#about-us">
                       <a
-                          href="#"
                           className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
                       >
-                        Work with Us
+                        Explore The Possibilities
                       </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -172,7 +145,7 @@ export default function Example() {
 
         </div>
 
-        <section className="bg-white dark:bg-gray-900 py-8 max-w-7xl mx-auto">
+        <section id="about-us" className="bg-white dark:bg-gray-900 py-8 max-w-7xl mx-auto">
           <div className="container px-6 py-10 mx-auto">
             <div className="lg:text-center">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">About Us</h2>
@@ -297,36 +270,471 @@ export default function Example() {
             </div>
           </div>
         </section>
-        <div className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:text-center">
+        <section id="our-values" className="bg-white dark:bg-gray-900 py-8 max-w-7xl mx-auto">
+          <div className="container px-6 py-10 mx-auto">
+            <div className="lg:text-left">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Our Values</h2>
               <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 Everything is different
+              </p>
+              <p className="mt-4 max-w-xl text-xl text-gray-500">
+                We believe that every users have a different things they care about. So that's why when we create something, it's always different from one another
+              </p>
+            </div>
+            <div className="mt-8 xl:mt-12 lg:flex lg:items-center">
+              <div className="w-full lg:w-1/2 grid grid-cols-1 gap-8 xl:gap-16 md:grid-cols-2">
+                <div className="space-y-3">
+                            <span
+                                className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </span>
+
+                  <h1 className="text-2xl font-semibold text-gray-700 capitalize dark:text-white">New
+                    Components</h1>
+
+                  <p className="text-gray-500 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel
+                    non corrupti doloribus voluptatum eveniet
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                            <span
+                                className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                                </svg>
+                            </span>
+
+                  <h1 className="text-2xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark
+                    Mode</h1>
+
+                  <p className="text-gray-500 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel
+                    non corrupti doloribus voluptatum eveniet
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                            <span
+                                className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                                </svg>
+                            </span>
+
+                  <h1 className="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Easy to
+                    customiztions</h1>
+
+                  <p className="text-gray-500 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel
+                    non corrupti doloribus voluptatum eveniet
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                            <span
+                                className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                </svg>
+                            </span>
+
+                  <h1 className="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Simple & clean
+                    designs</h1>
+
+                  <p className="text-gray-500 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel
+                    non corrupti doloribus voluptatum eveniet
+                  </p>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex lg:w-1/2 lg:justify-center">
+                <img
+                    className="w-[28rem] h-[28rem] flex-shrink-0 object-cover xl:w-[34rem] xl:h-[34rem] rounded-full"
+                    src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                    alt=""/>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="use-cases" className="py-12 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="lg:text-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Use Cases</h2>
+              <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                A Word from Our Client
               </p>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
                 We believe that every users have a different things they care about. So that's why when we create something, it's always different from one another
               </p>
             </div>
-
-            <div className="mt-10">
-              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                {features.map((feature) => (
-                    <div key={feature.name} className="relative">
-                      <dt>
-                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                          <feature.icon className="h-6 w-6" aria-hidden="true" />
-                        </div>
-                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
-                      </dt>
-                      <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
-                    </div>
-                ))}
-              </dl>
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-12 text-center mt-12">
+              <div className="mb-12 md:mb-0">
+                <div className="flex justify-center mb-6">
+                  <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                      className="rounded-full shadow-lg w-32"
+                  />
+                </div>
+                <h5 className="text-xl font-semibold mb-4">Maria Smantha</h5>
+                <h6 className="font-semibold text-blue-600 mb-4">Web Developer</h6>
+                <p className="mb-4">
+                  <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="quote-left"
+                      className="w-6 pr-2 inline-block"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                  >
+                    <path
+                        fill="currentColor"
+                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                    ></path>
+                  </svg>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic
+                  tenetur quae quaerat ad velit ab hic tenetur.
+                </p>
+                <ul className="flex justify-center mb-0">
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star-half-alt"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 536 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z"
+                      ></path>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+              <div className="mb-12 md:mb-0">
+                <div className="flex justify-center mb-6">
+                  <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
+                      className="rounded-full shadow-lg w-32"
+                  />
+                </div>
+                <h5 className="text-xl font-semibold mb-4">Lisa Cudrow</h5>
+                <h6 className="font-semibold text-blue-600 mb-4">Graphic Designer</h6>
+                <p className="mb-4">
+                  <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="quote-left"
+                      className="w-6 pr-2 inline-block"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                  >
+                    <path
+                        fill="currentColor"
+                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                    ></path>
+                  </svg>
+                  Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+                  laboriosam, nisi ut aliquid commodi.
+                </p>
+                <ul className="flex justify-center mb-0">
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+              <div className="mb-0">
+                <div className="flex justify-center mb-6">
+                  <img
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                      className="rounded-full shadow-lg w-32"
+                  />
+                </div>
+                <h5 className="text-xl font-semibold mb-4">John Smith</h5>
+                <h6 className="font-semibold text-blue-600 mb-4">Marketing Specialist</h6>
+                <p className="mb-4">
+                  <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="quote-left"
+                      className="w-6 pr-2 inline-block"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                  >
+                    <path
+                        fill="currentColor"
+                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                    ></path>
+                  </svg>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                  praesentium voluptatum deleniti atque corrupti.
+                </p>
+                <ul className="flex justify-center mb-0">
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                      ></path>
+                    </svg>
+                  </li>
+                  <li>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="far"
+                        data-icon="star"
+                        className="w-4 text-yellow-500"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                    >
+                      <path
+                          fill="currentColor"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                      ></path>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
+        </section>
         <div className="bg-gray-50">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -443,11 +851,11 @@ export default function Example() {
             </div>
           </div>
           <div className="text-center p-6">
-            <span>© 2021 Copyright:</span>
-            <a className="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
+            <span>© {new Date().getFullYear()} Copyright: </span>
+            <a className="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Creattle.co</a>
           </div>
         </footer>
-      </div>
+      </html>
   )
 }
 
